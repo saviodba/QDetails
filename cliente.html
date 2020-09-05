@@ -1,53 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 	<title>Cadastro de Clientes</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" ></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+
 <body>
 	<header>
 		<nav class="navbar navbar-expand-md navbar-dark bg-primary">
 			<a class="navbar-brand" href="#">MINHA LOGO</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSuport">
-				<span class="navbar-toggler-icon"></span>	
+				<span class="navbar-toggler-icon"></span>
 			</button>
 
 			<div class="collapse navbar-collapse" id="navbarSuport">
-				<ul class="nav justify-content-end navbar-nav mr-auto">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Inicio</a>
+					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">Area de trabalho</a>
 					</li>
-					
-					<li class="nav-item">
-						<a class="nav-link" href="#">Relatorio</a>
-					</li>
-
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">
-							Cadastro
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Cadastros
 						</a>
-						<dir class="dropdown-menu" arial-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">Clientes</a>
+						<div class="dropdown-menu" arial-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="cliente.html">Clientes</a>
 							<a class="dropdown-item" href="#">Veiculos</a>
 							<a class="dropdown-item" href="#">Serviços</a>
-						</dir>
+						</div>
 					</li>
-				</ul>	
+				</ul>
 			</div>
-
+			</div>
 		</nav>
 	</header>
 
-	<div class="container-md">
+	<div class="container-md mt-3">
 		<form>
 			<div class="form-row">
-				
+
 				<div class="form-group col-md-8">
 					<label for="nome">Nome Completo*</label>
 					<input id="nome" class="form-control" type="text" name="nome">
@@ -60,12 +61,12 @@
 				<div class="form-group col-md-6">
 					<label for="cpf">Cpf</label>
 					<input id="cpf" class="form-control" type="text" name="cpf">
-				</div>	
+				</div>
 
 				<div class="form-group col-md-6">
 					<label for="rg">Rg</label>
 					<input id="rg" class="form-control" type="text" name="rg">
-				</div>						
+				</div>
 
 				<div class="form-group col-md-6">
 					<label for="endereco">Endereço </label>
@@ -81,12 +82,12 @@
 				</div>
 
 				<div class="form-group col-md-6">
-					<label for="bairro">Bairro </label>
+					<label for="bairro">Bairro</label>
 					<input id="bairro" class="form-control" type="text" name="bairro">
 				</div>
 				<div class="form-group col-md-4">
 					<label for="cidade">Cidade </label>
-					<select class="form-control" >
+					<select class="form-control">
 						<option selected>Selecione a Cidade</option>
 						<option>São Paulo</option>
 						<option>Belo Horizonte</option>
@@ -96,13 +97,18 @@
 				</div>
 
 				<div class="form-group col-md-2">
-					<label for="uf">UF </label>
-					<input id="uf" class="form-control" type="text" name="uf">
-				</div>				
+					<label for="estado">Estado</label>
+					<input id="estado" class="form-control" type="text" name="estado">
+				</div>
+
+				<div class="form-group col-md-2 ">
+					<input class="btn btn-primary btn-block" type="submit" value="Salvar" />
+				</div>
 			</div>
-			
+
 		</form>
 
 	</div>
 </body>
+
 </html>
