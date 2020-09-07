@@ -46,26 +46,41 @@
 	</header>
 
 	<div class="container-md mt-3">
-		<form>
+		<form method="POST">
 			<div class="form-row">
 
-				<div class="form-group col-md-8">
+				<div class="form-group col-md-6">
 					<label for="nome">Nome Completo*</label>
 					<input id="nome" class="form-control" type="text" name="nome">
 				</div>
-				<div class="form-group col-md-4">
+				<div class="form-group col-md-3">
 					<label for="tel">Telefone</label>
 					<input id="tel" class="form-control" type="text" name="tel">
 				</div>
+				<div class="form-group col-md-3">
+					<label for="cel">Celular</label>
+					<input id="cel" class="form-control" type="text" name="cel">
+				</div>
 
-				<div class="form-group col-md-6">
+				<div class="form-group col-md-2">
+					<label for="tpCliente">Tipo Cliente</label>
+					<select id="tipoCli" class="form-control" onchange="select()">
+						<option value="N" selected>Selecione</option>
+						<option value="F">Física</option>
+						<option value="J">Jurídica</option>
+					</select>
+				</div>
+				<div class="form-group col-md-4">
 					<label for="cpf">Cpf</label>
 					<input id="cpf" class="form-control" type="text" name="cpf">
 				</div>
-
-				<div class="form-group col-md-6">
+				<div class="form-group col-md-2">
 					<label for="rg">Rg</label>
 					<input id="rg" class="form-control" type="text" name="rg">
+				</div>
+				<div class="form-group col-md-4">
+					<label for="cnpj">Cnpj</label>
+					<input id="cnpj" class="form-control" type="text" name="cnpj">
 				</div>
 
 				<div class="form-group col-md-6">
@@ -104,10 +119,36 @@
 				<div class="form-group col-md-2 ">
 					<input class="btn btn-primary btn-block" type="submit" value="Salvar" />
 				</div>
+
+				<?php
+					require_once("..\Controller\controllerCliente.php");
+					cliente();
+				?>
 			</div>
 
 		</form>
+		<script>
+			var selectTpCli = document.getElementById('tipoCli');
+			var txtCnpj = document.getElementById('#cnpj');
+			var txtCpf = document.getElementById('#cpf');
+			var txtRg = document.getElementById('#rg');
 
+			function select() {
+				var value = selectTpCli.options[selectTpCli.selectedIndex].value;
+				console.log(value);
+
+
+				//if (value == "F") {
+				//	txtCnpj.value = "Selecionou Física";
+				//}
+			}
+			function salvar() {
+				if (value == "N") {
+					alert("Selecione um tipo de cliente");
+					console.log("Selecione um tipo de cliente");
+				}
+			}
+		</script>
 	</div>
 </body>
 
