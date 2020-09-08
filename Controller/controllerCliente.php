@@ -1,17 +1,17 @@
 <?php
     
     require_once("..\Model\Cliente.php");
-    require_once("..\Dao\sql.php");
-    //echo "Nome: ". $_POST["nome"] ."</br>";
-    //echo "Endereço: ". $_POST["logradouro"];
+    require_once("..\Dao\sql.php");    
     
     $cliente = new Cliente();
 
     $cliente->setNome($_POST["nome"] );
-    $cliente->setTipoCliente("F");   
-    $cliente->setCpf($_POST["cpf"]);
-    $cliente->setRg($_POST["rg"]);
-    $cliente->setCnpj(""); 
+    $cliente->setTipoCliente($_POST["tipoCli"] );
+   
+    (empty($_POST["cpf"])) ? $cliente->setCpf("") : $cliente->setCpf($_POST["cpf"]);
+    (empty($_POST["rg"]) ) ? $cliente->setRg(""): $cliente->setRg($_POST["rg"]);    
+    (empty($_POST["cnpj"]) ) ? $cliente->setCnpj(""): $cliente->setCnpj($_POST["cnpj"]);
+     
     $cliente->setTel($_POST["tel"] ); 
     $cliente->setCel($_POST["cel"]); 
     $cliente->setCep($_POST["cep"]);
@@ -19,8 +19,7 @@
     $cliente->setNumero($_POST["numero"]); 
     $cliente->setComplemento($_POST["complemento"]);
     $cliente->setBairro($_POST["bairro"]);
-    $cliente->setCodCidade(0);
+    $cliente->setCodCidade($_POST["codcidade"]);
     
     $cliente->inserir($cliente);
-    //echo json_encode($cliente);
 ?>

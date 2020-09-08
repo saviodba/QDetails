@@ -2,13 +2,16 @@
     class Sql extends PDO {
 
         private $conn;
-        public function __contructor(){
-            $this->conn = new PDO("mysql:host=dbdeleloper.cl6wjwbjzvws.us-east-2.rds.amazonaws.com;dbname=QDetails;","root","08031955");
+        public function __construct(){
+            $this->conn = new PDO('mysql:host=dbdeleloper.cl6wjwbjzvws.us-east-2.rds.amazonaws.com;dbname=QDetails;','root','08031955');
         }
     
         private function setParams($statment, $parameters = array()){
+           
             foreach ($parameters as $key => $value) {
+
                 $this->setParam($key, $value);
+
             }
         }
 
@@ -25,12 +28,11 @@
             $stmt->execute();
 
             return $stmt;
-
         }
 
         public function select( $rawQuery, $params = array()):array{
             $stmt = $this->query($rawQuery, $params);
-            return $stmt->fetchAlll(PDO::FETCH_ASSOC);
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
                 
     }
