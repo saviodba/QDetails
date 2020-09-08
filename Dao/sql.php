@@ -32,6 +32,6 @@
             $stmt = $this->query($rawQuery, $params);
             return $stmt->fetchAlll(PDO::FETCH_ASSOC);
         }
-    
+                
     }
 ?>

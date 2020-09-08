@@ -9,6 +9,7 @@ class Cliente {
     private $FCnpj; 
     private $FTel; 
     private $FCel; 
+    private $FCep;
     private $FLogradouro;
     private $FNumero; 
     private $FComplemento;
@@ -28,7 +29,7 @@ class Cliente {
     public function  setCpf($FCpf){
         $this->cpf=$FCpf;
     }
-    public function  setFRg($FRg){
+    public function  setRg($FRg){
         $this->rg=$FRg;
     }
     public function  setCnpj($FCnpj){
@@ -40,13 +41,16 @@ class Cliente {
     public function  setCel($FCel){
         $this->cel=$FCel;
     }
+    public function  setCep($FCep){
+        $this->cep=$FCep;
+    }
     public function  setLogradouro($FLogradouro){
         $this->logradrouro=$FLogradouro;
     }
     public function  setNumero($FNumero){
         $this->numero=$FNumero;
     }
-    public function  setCodComplemento($FComplemento){
+    public function  setComplemento($FComplemento){
         $this->complemento=$FComplemento;
     }
     public function  setBairro($FBairro){
@@ -69,7 +73,7 @@ class Cliente {
     public function  getCpf(){
         return $this->cpf;
     }
-    public function  getFRg(){
+    public function  getRg(){
         return $this->rg;
     }
     public function  getCnpj(){
@@ -80,6 +84,9 @@ class Cliente {
     }
     public function  getCel(){
         return $this->cel;
+    }    
+    public function  getCep(){
+        return $this->cep;
     }
     public function  getLogradouro(){
         return $this->logradouro;
@@ -87,7 +94,7 @@ class Cliente {
     public function getNumero(){
         return $this->numero;
     }
-    public function getCodComplemento(){
+    public function getComplemento(){
         return $this->complemento;
     }
     public function  getBairro(){
@@ -96,13 +103,47 @@ class Cliente {
     public function getCodCidade(){
         return $this->codCidade;
     }
+    
+    function inserir(Cliente $cli){
+       // echo json_encode($cli);
+        $sql = new Sql();
+        $sql->query("CALL sp_cliente_insert (:nome, :tipoCli, :tel, :cel, :cpf, :rg, 
+            :cnpj, :cep, :logradouro, :numero, :complemento, :bairro, :codcid)",
+        array(
+            ':nome'=>$cli->getNome(), 
+            ':tipoCli'=>$cli->getTipoCliente(), 
+            ':tel'=>$cli->getTel(), 
+            ':cel'=>$cli->getCel(), 
+            ':cpf'=>$cli->getCpf(), 
+            ':rg'=>$cli->getRg(), 
+            ':cnpj'=>$cli->getCnpj(), 
+            ':cep'=>$cli->getCep(), 
+            ':logradouro'=>$cli->getLogradouro(), 
+            ':numero'=>$cli->getNumero(), 
+            ':complemento'=>$cli->getComplemento(), 
+            ':bairro'=>$cli->getBairro(), 
+            ':codcid'=>$cli->getCodCidade()
+        ));
+        
+    }
+    public function __toString(){
+        return json_encode(array(
 
-    public function exibir(){
-        return array(
-        "nome"=>$this->getNome(),
-        "tipoCliente"=>$this->getTipoCliente(),
-        "tel"=>$this->getTel()
-        );
+            "nome"=>$this->getNome(),
+            "tipoCliente"=>$this->getTipoCliente(),
+            "tel"=>$this->getTel(),
+            "cel"=>$cli->getCel(), 
+            "cpf"=>$cli->getCpf(), 
+            "rg"=>$cli->getRg(), 
+            "cnpj"=>$cli->getCnpj(), 
+            "cep"=>$cli->getCep(), 
+            "logradouro"=>$cli->getLogradouro(), 
+            "numero"=>$cli->getNumero(), 
+            "complemento"=>$cli->getComplemento(), 
+            "bairro"=>$cli->getBairro(), 
+            "codcid"=>$cli->getCodCidade()  
+
+        ));
     }
 }
 
