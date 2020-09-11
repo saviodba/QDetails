@@ -104,7 +104,7 @@ class Cliente {
         return $this->codCidade;
     }
     
-    function inserir(Cliente $cli){
+    /*function inserir(Cliente $cli){
        // echo json_encode($cli);
         $sql = new Sql();   
        $result = $sql->select("call sp_cliente_insert(:NOME, :TIPOCLIENTE, :CPF, :RG, :CNPJ, :TEL, :CEL, :CEP, :LOGRADOURO, 
@@ -125,7 +125,7 @@ class Cliente {
         ':CODCIDADE'=>$cli->getCodCidade()
         ));
         echo json_encode($result);
-    }
+    }*/
     public function __toString(){
         return json_encode(array(
 

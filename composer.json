@@ -1,0 +1,10 @@
+{
+    "name": "saviobr/q-details",
+    "description": "Sistema controle lavação",
+    "type": "project",
+    "minimum-stability": "dev",
+    "require": {
+        "monolog/monolog":"1.0.*",        
+        "rain/raintpl": ">=3.0.0"
+        }
+}
