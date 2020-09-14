@@ -39,7 +39,9 @@ class DataModelCliente {
     }
 
     public function listarTodos(){
-
+        $sql = new Sql();   
+        $result = $sql->select("SELECT * FROM clientes");
+        echo json_encode($result);
     }
 
 }

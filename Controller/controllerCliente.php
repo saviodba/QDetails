@@ -8,5 +8,9 @@
         {                    
             dataModelCliente::inserir($cliente);    
         }
+
+        public function listarClientes(){
+            return dataModelCliente::listarTodos();
+        }
     }
 ?>
