@@ -20,9 +20,12 @@
 	//$tpl->assign( "retorno", $retorno );		
     $tpl->draw( "lista-cliente" );*/
     
-    require_once("controller/controllerCliente.php");
-
-    $lista = new ControllerCliente();
+    
+    require __DIR__ ."/vendor/autoload.php"; 
+    
+    use App\Controller\controllerCliente;
+    
+    $lista = new Controller\ControllerCliente();
     $jsonResult = $lista->listarClientes(); 
     echo $jsonResult;
 ?>

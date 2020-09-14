@@ -1,7 +1,8 @@
 <?php
     require_once("vendor/autoload.php");    
     use \Rain\Tpl;
-
+    use \classClientes\Cliente;
+    
     $config = array(
         "tpl_dir"       => "Templates/",
         "cache_dir"     => "cache/"

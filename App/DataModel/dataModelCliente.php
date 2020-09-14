@@ -1,7 +1,11 @@
 <?php
-require_once("..\Model\Cliente.php");
-require_once("..\Dao\sql.php"); 
+    namespace App\DataModelCliente;
+//require_once("..\Model\Cliente.php");
+//require_once("..\Dao\sql.php"); 
 
+    require __DIR__ ."/vendor/autoload.php";
+    use \App\Cliente;
+    use \App\Sql;
 class DataModelCliente {
 
     public function inserir(Cliente $cli){
