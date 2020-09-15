@@ -1,5 +1,7 @@
 <?php
-    namespace App\Sql;
+    namespace App\Dao;
+    
+    use \PDO;
     class Sql extends PDO {
 
         private $conn;

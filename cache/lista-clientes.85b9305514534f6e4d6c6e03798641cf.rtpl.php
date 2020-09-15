@@ -1,5 +1,4 @@
-<?php requere_once="../Controller/ControllerCliente.php"?>
-<!DOCTYPE html>
+<?php if(!class_exists('Rain\Tpl')){exit;}?><!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -64,33 +63,28 @@
     </header>
 
     <div class="container mt-2">
-    <table class="table table-striped table-hover">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">Código</th>
-                <th scope="col">Nome</th>
-                <th scope="col">TP</th>
-                <th scope="col">Logradouro</th>
-                <th scope="col">Numero</th>
-            </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th scope="row">5</th>
-            <td>Sávio Pereira</td>
-            <td>F</td>
-            <td>Rua Cel João Cabanas</td>
-            <td>419</td>
-        </tr>
-        <tr>
-            <th scope="row">6</th>
-            <td>Fernanda Cristina</td>
-            <td>F</td>
-            <td>Rua Cel João Cabanas</td>
-            <td>419</td>
-        </tr>
-    </tbody>
-    </table>
+        <table class="table table-striped table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">TP</th>
+                    <th scope="col">Logradouro</th>
+                    <th scope="col">Numero</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <th scope="row">{codigo}</th>
+                    <td>{nome}</td>
+                    <td>{tipo}</td>
+                    <td>{endereco}</td>
+                    <td>{numero}</td>
+                </tr>
+            </tbody>
+
+        </table>
     </div>
 </body>
 

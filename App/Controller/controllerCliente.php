@@ -1,15 +1,13 @@
 <?php
-   namespace App\controllerCliente;
+   namespace App\Controller;
 
     /*
     require_once("..\DataModel\dataModelCliente.php");
     require_once("..\Model\Cliente.php");
     require_once("..\Interface\interfaces.php");
     */ 
-    require_once("vendor/autoload.php");
-
-    use \App\DataModelCliente;
-    use \Model\Cliente;
+    use App\DataModel\dataModelCliente;
+    use App\Model\Cliente;
 
     class ControllerCliente 
     {

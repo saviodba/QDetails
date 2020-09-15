@@ -1,11 +1,9 @@
 <?php
-    namespace App\DataModelCliente;
-//require_once("..\Model\Cliente.php");
-//require_once("..\Dao\sql.php"); 
+    namespace App\DataModel;
 
-    require __DIR__ ."/vendor/autoload.php";
-    use \App\Cliente;
-    use \App\Sql;
+    use App\Model\Cliente;
+    use App\Dao\sql;
+    
 class DataModelCliente {
 
     public function inserir(Cliente $cli){
@@ -45,7 +43,7 @@ class DataModelCliente {
     public function listarTodos(){
         $sql = new Sql();   
         $result = $sql->select("SELECT * FROM clientes");
-        echo json_encode($result);
+        return json_encode($result);
     }
 
 }

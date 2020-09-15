@@ -1,5 +1,5 @@
 <?php
-    namespace App\Cliente;
+    namespace App\Model;
 class Cliente {
     private $FCodcliente;
     private $FNome;
